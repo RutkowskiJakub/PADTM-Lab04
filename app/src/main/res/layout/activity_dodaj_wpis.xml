@@ -6,19 +6,6 @@
     android:layout_height="match_parent"
     tools:context=".DodajWpis">
 
-    <EditText
-        android:id="@+id/gatunek"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:text="Gatunek"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.244" />
-
     <Button
         android:id="@+id/button"
         android:layout_width="wrap_content"
@@ -29,14 +16,13 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.695" />
+        app:layout_constraintTop_toBottomOf="@+id/opis"
+        app:layout_constraintVertical_bias="0.097" />
 
     <EditText
         android:id="@+id/kolor"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
         android:ems="10"
         android:inputType="textPersonName"
         android:text="Kolor"
@@ -66,5 +52,14 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/wielkosc" />
+
+    <Spinner
+        android:id="@+id/gatunek"
+        android:layout_width="409dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="204dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
