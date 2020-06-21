@@ -33,4 +33,19 @@ public class MainActivity extends AppCompatActivity {
         ListView listview = (ListView) findViewById(R.id.mainActivityListView);
         listview.setAdapter(this.adapter);
     }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu)
+    {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.main_menu, menu);
+        return true;
+    }
+
+    public void nowyWpis(MenuItem mi)
+    {
+        Intent intencja = new Intent(this, DodajWpis.class);
+        startActivityForResult(intencja, 1);
+    }
+
 }
