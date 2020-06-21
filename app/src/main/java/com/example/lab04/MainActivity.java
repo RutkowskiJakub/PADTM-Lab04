@@ -14,6 +14,8 @@ import android.widget.ListView;
 import android.widget.SimpleCursorAdapter;
 import android.widget.TextView;
 
+import org.w3c.dom.Text;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 
@@ -45,6 +47,17 @@ public class MainActivity extends AppCompatActivity {
                 Intent intencja = new Intent(getApplicationContext(), DodajWpis.class);
                 intencja.putExtra("element", zwierz);
                 startActivityForResult(intencja, 2);
+            }
+        });
+
+        listview.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
+            @Override
+            public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id){
+                TextView usun = (TextView) view.findViewById(android.R.id.text1);
+                db.usun(usun.getText().toString());
+                adapter.changeCursor(db.lista());
+                adapter.notifyDataSetChanged();
+                return true;
             }
         });
     }
